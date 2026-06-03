@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ahmed Essam – Front-End Web Developer. Responsive, modern, and performant web experiences." />
+  <meta name="keywords" content="Ahmed Essam, Front-End Developer, HTML, CSS, JavaScript, Vue, Bootstrap, Portfolio" />
+  <title>Ahmed Essam · Frontend Developer</title>
+
+
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700;900&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== CUSTOM CURSOR ===== -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ===== SPLASH SCREEN ===== -->
+  <div class="splash" id="splash">
+    <div class="splash-inner">
+      <div class="splash-name">
+        <span class="splash-first" >Ahmed</span>
+        <span class="splash-last" >Essam</span>
+      </div>
+      <div class="splash-bar"><div class="splash-progress" id="splashProgress"></div></div>
+      <p class="splash-role" id="splashRole">Frontend Developer</p>
+    </div>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar-wrapper" id="navbar">
+    <nav class="navbar-inner" role="navigation" aria-label="Main Navigation">
+      <!-- Logo -->
+      <a href="#" class="nav-logo" aria-label="Ahmed Essam Home">
+        <span>AHMED.DEV</span>
+      </a>
+
+      <!-- Nav Links -->
+      <ul class="nav-links" role="list">
+        <li><a href="#hero" data-i18n="nav_home">Home</a></li>
+        <li><a href="#about" data-i18n="nav_about">About</a></li>
+        <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
+        <li><a href="#projects" data-i18n="nav_projects">Projects</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+
+      <!-- edit-->
+      <div class="nav-edit">
+        <!-- Language Toggle -->
+        <button class="ctrl-btn lang-btn" id="langToggle" aria-label="Switch Language">
+          <span class="lang-en">AR</span>
+          <span class="lang-ar">EN</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button class="ctrl-btn theme-btn" id="themeToggle" aria-label="Toggle Theme">
+          <i class="fa-solid fa-sun" id="themeIcon"></i>
+        </button>
+
+        <!-- Mobile Hamburger -->
+        <button class="ctrl-btn hamburger" id="hamburger" aria-label="Toggle Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <ul role="list">
+        <li><a href="#hero" data-i18n="nav_home">Home</a></li>
+        <li><a href="#about" data-i18n="nav_about">About</a></li>
+        <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
+        <li><a href="#projects" data-i18n="nav_projects">Projects</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="hero" aria-label="Hero">
+      <div class="hero-bg-grid"></div>
+
+      <div class="hero-content">
+        <!-- Left: Text -->
+        <div class="hero-text reveal-left">
+          <h1 class="hero-name">  <span data-i18n = "hero_name"> Ahmed</span> <br><span  data-i18n = "accent_text" class="accent-text">Essam</span></h1>
+          <p class="hero-role">
+            <span class="role-prefix" data-i18n="hero_role_prefix">FrontEnd</span>
+            <span class="typed-text" id="typedText"></span>
+            <span class="cursor-blink">|</span>
+          </p>
+          <p class="hero-bio" data-i18n="hero_bio">
+            Crafting pixel-perfect, blazing-fast web experiences that live at the intersection of design and code.
+          </p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary" data-i18n="hero_cta_work">View My Work</a>
+            <a href="#contact" class="btn btn-ghost" data-i18n="hero_cta_contact">Get In Touch</a>
+          </div>
+
+          <!-- Social icons -->
+          <div class="hero-socials">
+            <a href="https://github.com/ahmedessames60-CODER" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/ahmed-essam-a1244039b" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://wa.me/201234567890" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Right: Photo -->
+        <div class="hero-photo reveal-right">
+          <div class="photo-frame">
+            <div class="frame-orbit orbit-1"></div>
+            <div class="frame-orbit orbit-2"></div>
+            <div class="frame-orbit orbit-3"></div>
+            <div class="photo-inner shimmer" id="heroImgWrapper">
+              <!-- استخدام lazy loading للصورة الشخصية -->
+              <img
+                src="image/5994313245046541661_121.jpg"
+                data-src="image/5994313245046541661_121.jpg"
+                alt="Ahmed Essam - Frontend Developer"
+                class="profile-img lazy"
+                id="profileImg"
+                loading="lazy"
+              />
+              <!-- Placeholder أيقونة لو الصورة مش موجودة -->
+              <div class="photo-placeholder" id="photoPlaceholder">
+                <i class="fa-solid fa-user"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <section class="about" id="about" aria-label="About Me">
+      <div class="section-container">
+        <div class="section-header reveal-up">
+          <h2 class="section-title" data-i18n="about_title">About Me</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text reveal-left">
+            <p data-i18n="about_p1">
+              I'm Ahmed Essam, a 20-year passionate Front-End Developer from <strong>Gharbia, Egypt</strong>. I'm currently studying at the <strong>Institute of Management and Information Systems</strong>, where I'm combining formal education with hands-on development experience.
+            </p>
+            <p data-i18n="about_p2">
+              I believe great web experiences are born at the crossroads of clean code and thoughtful design. Every pixel matters, every millisecond counts, and every user deserves a seamless journey.
+            </p>
+            <div class="about-info-grid">
+              <div class="info-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                  <span class="info-label" data-i18n="about_location_label">Location</span>
+                  <span class="info-value" data-i18n="about_location">Gharbia, Egypt</span>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <div>
+                  <span class="info-label" data-i18n="about_edu_label">Education</span>
+                  <span class="info-value" data-i18n="about_edu">Inst. of Management & Info. Systems</span>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="fa-solid fa-cake-candles"></i>
+                <div>
+                  <span class="info-label" data-i18n="about_age_label">Age</span>
+                  <span class="info-value" data-i18n="about_age">20 Years</span>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="fa-solid fa-briefcase"></i>
+                <div>
+                  <span class="info-label" data-i18n="about_status_label">Status</span>
+                  <span class="info-value" data-i18n="about_status">Open to Work</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-stats reveal-right">
+            <div class="stat-card">
+              <span class="stat-num">3+</span>
+              <span class="stat-label" data-i18n="stat_projects">Projects Built</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">1</span>
+              <span class="stat-label" data-i18n="stat_years">Years Coding</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">4</span>
+              <span class="stat-label" data-i18n="stat_tech">Tech Stack</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">∞</span>
+              <span class="stat-label" data-i18n="stat_passion">Passion</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS SECTION ===== -->
+    <section class="skills" id="skills" aria-label="Skills">
+      <div class="section-container">
+        <div class="section-header reveal-up">
+          <h2 class="section-title" data-i18n="skills_title">My Skills</h2>
+        </div>
+
+        <div class="skills-layout">
+          <!-- Technical Skills -->
+          <div class="skills-group reveal-left">
+            <h3 class="skills-group-title" data-i18n="skills_tech_title">
+              <i class="fa-solid fa-code"></i> Technical
+            </h3>
+            <div class="skills-bars">
+              <div class="skill-bar-item" data-skill="HTML5" data-percent="95">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fa-brands fa-html5"></i> HTML5</span>
+                  <span class="skill-pct">95%</span>
+                </div>
+                <div class="skill-track"><div class="skill-fill" style="--pct:95%"></div></div>
+              </div>
+              <div class="skill-bar-item" data-skill="CSS3" data-percent="90">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+                  <span class="skill-pct">90%</span>
+                </div>
+                <div class="skill-track"><div class="skill-fill" style="--pct:90%"></div></div>
+              </div>
+              <div class="skill-bar-item" data-skill="JavaScript" data-percent="80">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fa-brands fa-js"></i> JavaScript</span>
+                  <span class="skill-pct">80%</span>
+                </div>
+                <div class="skill-track"><div class="skill-fill" style="--pct:80%"></div></div>
+              </div>
+              <div class="skill-bar-item" data-skill="Bootstrap" data-percent="85">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fa-brands fa-bootstrap"></i> Bootstrap</span>
+                  <span class="skill-pct">85%</span>
+                </div>
+                <div class="skill-track"><div class="skill-fill" style="--pct:85%"></div></div>
+              </div>
+              <div class="skill-bar-item" data-skill="Vue.js" data-percent="70">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fa-brands fa-vuejs"></i> Vue.js</span>
+                  <span class="skill-pct">70%</span>
+                </div>
+                <div class="skill-track"><div class="skill-fill" style="--pct:70%"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Focus Areas -->
+          <div class="skills-group reveal-right">
+            <h3 class="skills-group-title" data-i18n="skills_focus_title">
+              <i class="fa-solid fa-crosshairs"></i> Focus Areas
+            </h3>
+            <div class="focus-grid">
+              <div class="focus-card">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <span data-i18n="focus_responsive">Responsive Design</span>
+              </div>
+              <div class="focus-card">
+                <i class="fa-solid fa-gauge-high"></i>
+                <span data-i18n="focus_performance">Performance</span>
+              </div>
+              <div class="focus-card">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span data-i18n="focus_seo">SEO</span>
+              </div>
+              <div class="focus-card">
+                <i class="fa-solid fa-layer-group"></i>
+                <span data-i18n="focus_scalability">Scalability</span>
+              </div>
+              <div class="focus-card">
+                <i class="fa-solid fa-diagram-project"></i>
+                <span data-i18n="focus_system">System Design</span>
+              </div>
+              <div class="focus-card">
+                <i class="fa-solid fa-broom"></i>
+                <span data-i18n="focus_clean">Clean Code</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS SECTION ===== -->
+    <section class="projects" id="projects" aria-label="Projects">
+      <div class="section-container">
+        <div class="section-header reveal-up">
+          <h2 class="section-title" data-i18n="projects_title">Projects</h2>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+          <!-- يتم حقن الكروت ديناميكياً من script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section class="contact" id="contact" aria-label="Contact">
+      <div class="section-container">
+        <div class="section-header reveal-up">
+          <h2 class="section-title" data-i18n="contact_title">CONTACT</h2>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-cards reveal-right">
+            <!-- WhatsApp -->
+            <a href="https://wa.me/201234567890" target="_blank" rel="noopener noreferrer" class="contact-card whatsapp-card">
+              <div class="cc-icon"><i class="fa-brands fa-whatsapp"></i></div>
+              <div class="cc-info">
+                <span class="cc-label" data-i18n="contact_whatsapp">WhatsApp</span>
+                <span class="cc-value">+20 1223112512</span>
+              </div>
+              <i class="fa-solid fa-arrow-up-right-from-square cc-arrow"></i>
+            </a>
+
+            <!-- Gmail with Copy feature -->
+            <div class="contact-card gmail-card" id="gmailCard" role="button" tabindex="0" aria-label="Copy Gmail address">
+              <div class="cc-icon"><i class="fa-brands fa-google"></i></div>
+              <div class="cc-info">
+                <span class="cc-label">Gmail</span>
+                <span class="cc-value" id="gmailAddress">ahmedessames60@gmail.com</span>
+              </div>
+              <div class="copy-wrapper">
+                <i class="fa-regular fa-copy cc-arrow" id="copyIcon"></i>
+                <!-- Tooltip نجاح النسخ -->
+                <span class="copy-tooltip" id="copyTooltip" data-i18n="contact_copied">Copied!</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <p class="footer-copy">
+        <span data-i18n="footer_made">Crafted with</span>
+        <span data-i18n="footer_by">by Ahmed Essam &copy; 2026</span>
+      </p>
+      <div class="footer-socials">
+        <a href="https://github.com/ahmedessames60-CODER" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/ahmed-essam-a1244039b" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://wa.me/201234567890" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Typewriter library -->
+  <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
